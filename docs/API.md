@@ -24,7 +24,7 @@
 - **ID:** permanent UUIDv7 identity; issued IDs are never reused.
 - **Property:** typed value attached to a Node by a generic key.
 - **Relationship:** first-class directed fact between permanent endpoint identities.
-- **Record:** canonical durable/history contract implemented by the Record Store.
+- **Record:** canonical authority for durable facts, identity, ownership, and lifecycle state.
 - **Index:** derived, rebuildable query/navigation projection.
 
 Definitions constrain and describe Property/Relationship vocabularies but are not a seventh primitive. SQLite, recovery, transactions, migrations, and cursors are implementation machinery.
@@ -43,7 +43,9 @@ Use `CoreError::category()` for stable programmatic handling. Exact error prose 
 
 ## Canonical versus derived reads
 
-Identity, Node Records, Properties, Relationships, definitions, revision history, and issued IDs are canonical Record concerns. Search, graph, backlinks, orphan projections, and indexed Property queries are derived Index concerns. `status().index_sync` reports whether the Index revision matches Record revision.
+Identity, Node Records, Properties, Relationships, definitions, revision metadata, and issued IDs are canonical Record concerns. Search, graph, backlinks, orphan projections, and indexed Property queries are derived Index concerns. `status().index_sync` reports whether the Index revision matches Record revision.
+
+Permanent identity/history semantics do not make Record an unlimited operational event log. The reconciliation journal is implementation machinery, currently retains the most recent 1,024 Record revisions, and may prune older entries. Reconciliation rebuilds derived state from canonical Record truth when the retained journal cannot bridge a checkpoint.
 
 ## Limits
 

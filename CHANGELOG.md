@@ -13,7 +13,7 @@ Genesis Core follows [Semantic Versioning](VERSIONING.md). The project is curren
 - typed Properties, first-class Relationships, definitions, and atomic batch mutation;
 - canonical SQLite Record Store and derived rebuildable Index;
 - tombstone, restore, purge, and explicit identity-resolution states;
-- deterministic migrations, protected-store enforcement, integrity validation, and recovery reconstruction;
+- deterministic migrations, optional protected-store root identity and sentinel validation, integrity validation, and recovery reconstruction;
 - bounded OFFSET compatibility reads, opaque keyset traversal, and exact stable Record snapshot scans;
 - self-contained real-content and heterogeneous/topology validation corpora;
 - public API, architecture, recovery, security, governance, contribution, and compatibility documentation;
@@ -22,8 +22,9 @@ Genesis Core follows [Semantic Versioning](VERSIONING.md). The project is curren
 ### Clarified
 
 - Record is canonical; Index is derived and rebuildable.
-- Record history is permanent evidence, not a claim that every removed fact remains current.
+- Permanent history semantics apply to issued identity, canonical facts, ownership, and lifecycle; the operational reconciliation journal is bounded and may be pruned.
 - Node IDs are permanent and never reused.
+- Protected mode validates configured-root identity plus a persistent sentinel; it is not a complete filesystem or process sandbox.
 - ordinary mutation success means canonical success; derived Index/recovery follow-up can lag and be reconciled.
 - whole-collection and OFFSET APIs are compatibility surfaces, not stable scalable scans.
 - UI, content formats, application ontologies, accounts, networking, and hosted services remain outside Core.

@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   verify:
-    runs-on: [self-hosted, Linux, X64, genesis]
+    runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
@@ -25,7 +25,7 @@ jobs:
       - run: cargo run --locked --example headless
 
   audit:
-    runs-on: [self-hosted, Linux, X64, genesis]
+    runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4

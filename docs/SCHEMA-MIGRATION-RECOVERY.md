@@ -14,6 +14,8 @@ Format versions are independent from the crate's Semantic Version.
 
 The Record Store contains Store metadata/revision, Nodes, issued Node IDs, typed Properties, Relationships using permanent endpoint UUIDs, Property/Relationship definitions, and a bounded change journal used for derived reconciliation/recovery. `records.sqlite` is private storage implementation; consumers use the public API.
 
+The change journal is operational machinery, not canonical authority or an unlimited event archive. The current retention policy keeps journal changes for the most recent 1,024 Record revisions and prunes older entries. Canonical current state, issued-ID history, and lifecycle semantics remain authoritative outside that journal window; reconciliation rebuilds from Record truth when a checkpoint can no longer be bridged.
+
 Supported open paths are an empty Store, recognized legacy Record schemas 1–4, and current schema 5. Migrations are ordered and transactional. Pre-migration foreign-key violations, inconsistent metadata, non-empty unversioned databases, and unsupported versions reject the live Record-open path without deleting rows to make validation pass. Public `CoreState::open` can instead reconstruct from validated recovery material as described below; unsupported schema errors are returned directly. Schema 2/3 legacy capability tables may remain inert for above-Core import; Core neither reads nor recreates them.
 
 Core does not promise downgrade writes. Back up valuable data before opening it with a newer engine.

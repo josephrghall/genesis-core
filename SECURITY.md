@@ -6,7 +6,9 @@
 
 Genesis Core is an embedded, local-first Rust library. Its boundary is the selected library root, the `.genesis` metadata directory, the host process, and the caller using the public API. Core does not run a network service, authenticate users, authorize tenants, or encrypt data by itself.
 
-`CoreState::open_protected` validates an already configured protected-storage boundary and fails closed if that boundary is unavailable or mismatched. It does not create encryption. The operating system, encrypted volume, mount, account permissions, backup system, and key management remain outside Core.
+Protected mode is optional. `CoreState::configure_protected` requires an existing selected root, canonicalizes it, and creates a versioned storage-boundary manifest plus a unique persistent sentinel. On Unix, the recorded root fingerprint contains canonical path, device ID, and inode. On Windows, it contains canonical path and the sentinel remains mandatory. `CoreState::open_protected` and protected writes fail closed when the root is missing or the configured fingerprint or sentinel no longer matches.
+
+This baseline validates configured-root identity; it is not a complete filesystem access-control or process sandbox. Core does not currently guarantee host path ownership or rejection of every symlink/reparse-point substitution. The operating system, stricter path policy, encrypted volume, mount, account ownership and permissions, container/service-account restrictions, process sandbox, backup system, and key management remain external deployment controls.
 
 ## Trust assumptions
 
@@ -27,6 +29,7 @@ Core treats cursor tokens, IDs, Property keys/values, Relationship keys, schema 
 - `index.sqlite` is derived, disposable, and rebuildable; it is never sufficient backup or authority.
 - issued Node IDs remain canonical identity history after Purge without retaining a secret purged Node Record.
 - recovery baselines, segments, manifests, and checksums are redundant local recovery material. They are not canonical during normal operation and are not an off-device backup.
+- the `record_changes` reconciliation journal is bounded and may be pruned; it is not an unlimited security or audit log.
 - ordinary mutation `Ok` reports canonical success even if best-effort Index/recovery follow-up fails; inspect status and repair without retrying the mutation. `PostCommitFailure` specifically reports a failed purge recovery-barrier completion after canonical commit; other storage/lock errors may require canonical-state inspection. See [API failure semantics](docs/API.md#failure-semantics).
 
 ## Corruption and malformed stores
