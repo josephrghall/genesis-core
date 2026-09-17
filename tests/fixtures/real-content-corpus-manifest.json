@@ -1,0 +1,141 @@
+{
+  "source_sha": "public-corpus-v1",
+  "item_count": 19,
+  "total_bytes": 33385,
+  "aggregate_sha256": "fb93b8c081b72d64130332fa28eabd96013d3cb3b4a299a7ee40d8a39b41943a",
+  "items": [
+    {
+      "path": "README.md",
+      "title": "Genesis Core",
+      "kind": "public_markdown",
+      "bytes": 4910,
+      "sha256": "21dd29a9ee331430f2972dc0aa7e6acd00d0588a45800168bca56e474ad9ed32"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "title": "Changelog",
+      "kind": "public_markdown",
+      "bytes": 2232,
+      "sha256": "cafdf7ad5ef0bbb6aa1d6005a2045bb2a22d7c0ce67c3cffbca238be8a3b04c3"
+    },
+    {
+      "path": "Cargo.toml",
+      "title": "Rust crate manifest",
+      "kind": "structured_text",
+      "bytes": 833,
+      "sha256": "1e07f5759535f57a63e090f6e772e2f9cb3a7454eb73604febc323e8cad38049"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "title": "Architecture",
+      "kind": "public_markdown",
+      "bytes": 2336,
+      "sha256": "461a0fb426d6b6d52a0ef129fa58eecb4250d446621eaa3dcac8b674ecf6825b"
+    },
+    {
+      "path": "docs/API.md",
+      "title": "API guide",
+      "kind": "public_markdown",
+      "bytes": 5102,
+      "sha256": "d37aace8054112f1c5aa38e94b7bb39d850d3df4257bea5b8ab438ac9fc107c8"
+    },
+    {
+      "path": "docs/SEMANTIC-CONTRACT.md",
+      "title": "Core semantic contract",
+      "kind": "public_markdown",
+      "bytes": 2001,
+      "sha256": "cbd0178128f08f564d3b67f402911123e4f07ab940c40468dc6c8b64c971052b"
+    },
+    {
+      "path": "docs/ID-CONTRACT.md",
+      "title": "ID contract",
+      "kind": "public_markdown",
+      "bytes": 736,
+      "sha256": "80121fe331e7255c6d109b30cadf6922ca2181f0573a9eb61d5c71c524a375a7"
+    },
+    {
+      "path": "docs/RECORD-INDEX-TRANSACTION-CONTRACT.md",
+      "title": "Record and Index transaction contract",
+      "kind": "public_markdown",
+      "bytes": 1292,
+      "sha256": "d938c05f1588b72371ff4c2a485d21fc16689f6fb2a9d51e1455870480085e55"
+    },
+    {
+      "path": "docs/TRAVERSAL-CONTRACT.md",
+      "title": "Traversal contract",
+      "kind": "public_markdown",
+      "bytes": 1249,
+      "sha256": "e07d86f1711566c2755bb2cae1303f9bb0d9194aa139a8681e53c6b3cdf8bd2c"
+    },
+    {
+      "path": "src/value.rs",
+      "title": "Typed value implementation",
+      "kind": "source_code",
+      "bytes": 4766,
+      "sha256": "36b9b23148f27997ad2d9e2d4c3a915e6d354bc75180e7d64c1ae1a3a1228714"
+    },
+    {
+      "path": "docs/QUICKSTART.md",
+      "title": "Quickstart",
+      "kind": "public_markdown",
+      "bytes": 2524,
+      "sha256": "1eb23c3ca8fad7fdfcdb08e0876315ece4d644831657bf298cf5f5c9be90d77a"
+    },
+    {
+      "path": "docs/SCHEMA-MIGRATION-RECOVERY.md",
+      "title": "Schema, migration, and recovery",
+      "kind": "public_markdown",
+      "bytes": 5044,
+      "sha256": "c5edf81581a58d31fbbe4b9ab08c69010cb7cadbe43dabd278e03c896552b9bb"
+    },
+    {
+      "path": "validation/empty.md",
+      "title": "Empty fixture",
+      "kind": "bounded_edge_fixture",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "validation/unicode.md",
+      "title": "Unicode fidelity",
+      "kind": "bounded_edge_fixture",
+      "bytes": 104,
+      "sha256": "5edc5d9f39812661bf3379b27b766e3e32ceaa763ecc91dadefed856c75f0b43"
+    },
+    {
+      "path": "validation/duplicate-a.md",
+      "title": "Duplicate content A",
+      "kind": "bounded_edge_fixture",
+      "bytes": 63,
+      "sha256": "00d63ee178d9c57d2d2698b47d312e614f3c9bed0293504cc733fb4f38534417"
+    },
+    {
+      "path": "validation/duplicate-b.md",
+      "title": "Duplicate content B",
+      "kind": "bounded_edge_fixture",
+      "bytes": 63,
+      "sha256": "00d63ee178d9c57d2d2698b47d312e614f3c9bed0293504cc733fb4f38534417"
+    },
+    {
+      "path": "validation/same-title-a.md",
+      "title": "Shared title",
+      "kind": "bounded_edge_fixture",
+      "bytes": 33,
+      "sha256": "ab3d4b849c0a5809423834f1a2aa4973c6e881a9b00978e5e81441ab627d2d32"
+    },
+    {
+      "path": "validation/same-title-b.md",
+      "title": "Shared title",
+      "kind": "bounded_edge_fixture",
+      "bytes": 45,
+      "sha256": "91b6cc0b22dc3d504cf26ae34e779ed31da75dc08fc77551c86336e9019462a4"
+    },
+    {
+      "path": "validation/structured.json",
+      "title": "Structured JSON",
+      "kind": "structured_text",
+      "bytes": 52,
+      "sha256": "134a6804ba793f0886f7d66e23f45480f35a9f515fa0e88740b699ff6bfc8dae"
+    }
+  ]
+}
