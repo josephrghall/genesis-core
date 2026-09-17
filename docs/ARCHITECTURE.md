@@ -10,14 +10,14 @@ Genesis Core is a headless embedded engine with a strict six-primitive conceptua
 | ID | Permanent UUIDv7 identity and issued-ID history |
 | Property | Typed fact attached to a Node |
 | Relationship | First-class directed edge between Nodes |
-| Record | Canonical durable truth and mutation history |
+| Record | Canonical durable truth, identity, ownership, and lifecycle authority |
 | Index | Derived, disposable retrieval projection |
 
 Storage connections, schemas, transactions, migrations, validation, recovery artifacts, and security enforcement implement these primitives; they are not additional primitives.
 
 ## Authority and data flow
 
-Consumers call \`CoreState\`. Mutations commit atomically to the canonical Record Store. Index and recovery projections follow from the committed Record revision and can be reconciled after lag or loss.
+Consumers call `CoreState`. Mutations commit atomically to the canonical Record Store. Index and recovery projections follow from the committed Record revision and can be reconciled after lag or loss.
 
 ~~~text
 consumer
@@ -29,7 +29,7 @@ canonical Record Store ----> local recovery material
 derived Index
 ~~~
 
-\`records.sqlite\` is authoritative. \`index.sqlite\` is rebuildable. Recovery material is redundant local reconstruction evidence, not a separate source of truth or off-device backup.
+`records.sqlite` is authoritative. `index.sqlite` is rebuildable. Recovery material is redundant local reconstruction evidence, not a separate source of truth or off-device backup.
 
 ## Identity and lifecycle
 
@@ -41,6 +41,8 @@ Node IDs are issued once and never reused. Identity resolution distinguishes:
 - never issued.
 
 Tombstone is reversible. Purge removes Node-owned reconstructable state after a recovery barrier while retaining issued-ID history and independently surviving facts.
+
+The permanence contract applies to issued identity and canonical fact/lifecycle semantics. The operational change journal used for reconciliation is bounded, may be pruned, and is not an unlimited event-history contract.
 
 ## Reads and traversal
 
