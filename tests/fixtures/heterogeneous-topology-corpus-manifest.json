@@ -1,8 +1,8 @@
 {
   "source_sha": "public-corpus-v1",
   "item_count": 128,
-  "total_bytes": 206419,
-  "aggregate_sha256": "7d3803aaef28ee02294cf33b6ed935235f178f8774ae1363ece018b86bd4f02c",
+  "total_bytes": 208017,
+  "aggregate_sha256": "eb7f98498cd745699d0bd7547419d274c0430fa232d9668e5cbe028e1ea239f9",
   "items": [
     {
       "path": "README.md",
@@ -20,8 +20,8 @@
       "title": "Changelog",
       "logical_type": "markdown",
       "mime": "text/markdown",
-      "bytes": 2232,
-      "sha256": "cafdf7ad5ef0bbb6aa1d6005a2045bb2a22d7c0ce67c3cffbca238be8a3b04c3",
+      "bytes": 2474,
+      "sha256": "2745b911a85232ab1fa8f29787c4b90d04651f9e771275996f028f3d561bf6e1",
       "treatment_mode": "native_utf8_text",
       "fixture_class": "repository_source",
       "generator": null
@@ -53,8 +53,8 @@
       "title": "Verify workflow",
       "logical_type": "yaml",
       "mime": "application/yaml",
-      "bytes": 875,
-      "sha256": "3c86dc4a7a00e064e801b625152d53a8cca94d5f98cbed91254d8bbffea276a5",
+      "bytes": 833,
+      "sha256": "aef52a3d0ccc2b4e29bfb294aa8b584765e9d32588aa95c7bf7af5259f46a65e",
       "treatment_mode": "native_utf8_text",
       "fixture_class": "repository_source",
       "generator": null
@@ -75,8 +75,8 @@
       "title": "API guide",
       "logical_type": "markdown",
       "mime": "text/markdown",
-      "bytes": 5102,
-      "sha256": "d37aace8054112f1c5aa38e94b7bb39d850d3df4257bea5b8ab438ac9fc107c8",
+      "bytes": 5472,
+      "sha256": "0657dfa237c2608e6d652fef52be8cb360250be6142f9e19d2c6bd65cea355e4",
       "treatment_mode": "native_utf8_text",
       "fixture_class": "repository_source",
       "generator": null
@@ -86,8 +86,8 @@
       "title": "Architecture",
       "logical_type": "markdown",
       "mime": "text/markdown",
-      "bytes": 2336,
-      "sha256": "461a0fb426d6b6d52a0ef129fa58eecb4250d446621eaa3dcac8b674ecf6825b",
+      "bytes": 2577,
+      "sha256": "4e0bc2d2e91f7949c13a35530857bf90c42e42684d8639ec04a60f14292cfe45",
       "treatment_mode": "native_utf8_text",
       "fixture_class": "repository_source",
       "generator": null
@@ -152,8 +152,8 @@
       "title": "Security policy",
       "logical_type": "markdown",
       "mime": "text/markdown",
-      "bytes": 6511,
-      "sha256": "282befc5900b4daf846e9ff45623b36251fb10fd8d7b8e19b56e28a578b230a4",
+      "bytes": 7298,
+      "sha256": "f3365206eb10b3812373318ca34ff5e1a15487fa86e4e299517231c1904d5330",
       "treatment_mode": "native_utf8_text",
       "fixture_class": "repository_source",
       "generator": null
